@@ -4,7 +4,7 @@ from selenium.webdriver.support.ui import Select
 
 end=False
 
-driver=webdriver.Chrome(executable_path="./../chromedriver.exe")
+driver=webdriver.Chrome(executable_path="./../chromedriver_win32/chromedriver.exe")
 loginurl="https://ost.benesse.ne.jp/ol/member/login/login_ost"
 driver.get(loginurl)
 customerId=driver.find_element_by_id("customerId")
