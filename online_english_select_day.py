@@ -1,6 +1,7 @@
 from selenium import webdriver
 import time
 import datetime
+from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.support.ui import Select
 
 end=False
@@ -24,7 +25,8 @@ while True:
     driver.get('https://ost.benesse.ne.jp/ol/member/Reservation/selectTicket')
     try:
         buttonprimary=driver.find_element_by_css_selector(".button.primary")
-    except selenium.common.exceptions.NoSuchElementException:
+    except NoSuchElementException:
+        print("there is no tickets")
         end=True
     if end:
         break

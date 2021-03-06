@@ -1,4 +1,5 @@
 from selenium import webdriver
+from selenium.common.exceptions import NoSuchElementException
 import time
 from selenium.webdriver.support.ui import Select
 
@@ -20,7 +21,7 @@ while True:
     driver.get('https://ost.benesse.ne.jp/ol/member/TakeLesson/takeLesson')
     try:
         cancel=driver.find_element_by_css_selector(".button.crucial")
-    except selenium.common.exceptions.NoSuchElementException:
+    except NoSuchElementException:
         end=1
     if end:
         break
